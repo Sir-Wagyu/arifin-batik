@@ -35,39 +35,39 @@ function Navbar() {
         </Link>
 
         <div className={`hidden md:flex gap-8 font-raleway font-medium md:text-base  ${isScrolled ? "text-arifin-500" : "text-arifin-200"}`}>
-          <Link to="/" className="transition-colors duration-300 hover:text-arifin-400">
+          <a href="/" className="transition-colors duration-300 hover:text-arifin-400">
             Home
-          </Link>
-          <Link to="/about" className="transition-colors duration-300 hover:text-arifin-400">
-            Produk
-          </Link>
+          </a>
+          <a href="#about" className="transition-colors duration-300 hover:text-arifin-400">
+            About
+          </a>
+          <a href="#collection" className="transition-colors duration-300 hover:text-arifin-400">
+            Collection
+          </a>
           <Link to="/product" className="transition-colors duration-300 hover:text-arifin-400">
-            Feature
+            Product
           </Link>
           <Link to="/contact" className="transition-colors duration-300 hover:text-arifin-400">
-            Tentang Kami
-          </Link>
-          <Link to="/contact" className="transition-colors duration-300 hover:text-arifin-400">
-            Kontak
+            Contact
           </Link>
         </div>
 
         <div className={`fixed top-0 left-0 bottom-0 w-[65%] bg-arifin-100 z-40 transition-transform duration-300 ${isOpen ? "translate-x-0" : "-translate-x-full"}`}>
           <div className="flex flex-col py-8 items-center h-full gap-4 text-lg">
-            <Link to="/" className="transition-colors duration-300 hover:text-arifin-400 w-full px-6">
+            <a href="/" className="transition-colors duration-300 hover:text-arifin-400 w-full px-6">
               Home
-            </Link>
-            <Link to="/about" className="transition-colors duration-300 hover:text-arifin-400 w-full px-6" >
-              Produk
-            </Link>
+            </a>
+            <a href="#about" className="transition-colors duration-300 hover:text-arifin-400 w-full px-6" >
+              About
+            </a>
+            <a href="#collection" className="transition-colors duration-300 hover:text-arifin-400 w-full px-6">
+            Collection
+            </a>
             <Link to="/product" className="transition-colors duration-300 hover:text-arifin-400 w-full px-6">
-              Feature
+            Product
             </Link>
             <Link to="/contact" className="transition-colors duration-300 hover:text-arifin-400 w-full px-6">
-              Tentang Kami
-            </Link>
-            <Link to="/contact" className="transition-colors duration-300 hover:text-arifin-400 w-full px-6">
-              Kontak
+              Contact
             </Link>
           </div>
         </div>
