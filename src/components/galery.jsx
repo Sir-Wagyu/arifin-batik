@@ -2,7 +2,7 @@ function Galery() {
 
   return (
     <>
-   <div className="container mx-auto max-w-lg text-center pt-20 mb-16  px-6 md:px-12 lg:px-14 xl:px-28">
+   <div className="container mx-auto max-w-lg text-center pt-20 mb-16 px-6">
         <h1 className='text-3xl md:text-4xl border-b-2 border-arifin-400 font-lora inline-block pb-2 mb-4'>Gallery</h1>
         <p className="text-gray-700 text-[.9rem]">
         Step into our gallery and discover the charm of stamped batik—a harmonious blend of traditional techniques and modern artistry. Each piece showcases intricate patterns and vibrant colors, reflecting the craftsmanship and cultural heritage behind this timeless art. 

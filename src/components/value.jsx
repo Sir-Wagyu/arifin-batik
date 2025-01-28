@@ -3,13 +3,13 @@ import "../App.css";
 function Value() {
   return (
     <>
-        <section class="max-w-6xl mx-auto pt-32  px-6 md:px-12 lg:px-14 xl:px-28">
+        <section class="max-w-6xl mx-auto pt-32  px-6">
         <div className="mx-auto px-2 md:px-0 text-center">
             <p className="mb-5 text-xl font-raleway text-arifin-400">why choose us</p>
             <h1 className="text-2xl md:text-3xl font-lora">Best Service and Quality for You</h1>
            
         </div>
-            <div class="grid md:grid-cols-3 px-10 md:px-6 gap-14 md:gap-8 mt-20">
+            <div class="grid md:grid-cols-3 px-10 md:px-2 gap-14 md:gap-8 mt-20">
            
             <div class="text-center">
                 <div class="flex justify-center mb-4">
