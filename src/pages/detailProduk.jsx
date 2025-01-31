@@ -15,7 +15,8 @@ function DetailProduk() {
   const [related, setRelated] = useState([]);
 
 
-  let base_url = "http://localhost:8888/arifinbatikbackend/";
+  // let base_url = "http://localhost:8888/arifinbatikbackend/";
+  let base_url = "http://localhost/arifinbatikbackend/";
 
   useEffect(()=>{
     const getDetail = async () => {
@@ -46,138 +47,105 @@ function DetailProduk() {
 
   return (
     <>
-      <Navbar/>
-        <div className="w-full h-[40vh] flex items-center justify-center relative">
-          <img src={gambarbg} alt="hero-image" className="absolute w-full h-full object-cover" />
-          <div className="absolute top-0 left-0 w-full h-full bg-black/50 flex flex-col justify-center items-center text-arifin-100 text-center font-raleway px-6 md:px-12 lg:px-14 xl:px-28 ">
+      <Navbar />
+      <div className="w-full h-56 flex items-center justify-center relative">
+        <img src={gambarbg} alt="hero-image" className="absolute w-full h-full object-cover" />
+        <div className="absolute top-0 left-0 w-full h-full bg-black/50 flex flex-col justify-center items-center text-arifin-100 text-center font-raleway px-6 md:px-12 lg:px-14 xl:px-28">
           <h1 className="font-lora font-semibold text-3xl md:text-3xl mt-7 lg:text-4xl xl:text-5xl md:w-[80%] xl:w-[60%] mb-4 lg:mb-6">Detail Product</h1>
-          </div>
+        </div>
       </div>
 
-      <nav className="bg-white shadow-sm py-6">
-        <div className="container mx-auto  px-6 md:px-12 lg:px-14 xl:px-28">
-            <div className="flex justify-between items-center">
-               
-                <div className="flex items-center space-x-6">
-                    <a href="#" className="text-gray-600">Products</a>
-                    <a href="#" className="text-gray-600">Collections</a>
-                    <a href="#" className="text-gray-600">Find Store</a>
-                    <a href="#" className="text-gray-600">Contact Us</a>
-                   
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <div className="container mx-auto  px-6 md:px-12 lg:px-14 xl:px-28 py-8">
+      <div className="container mx-auto px-6 md:px-12 lg:px-14 xl:px-28 py-10 font-raleway">
         <div className="flex flex-col md:flex-row gap-8">
-            
-            <div className="md:w-1/2">
-                <div className="mb-4">
-                    <img src={`${base_url}/image/${produk.gambar}`} alt="Main product image" className="w-full rounded-lg"/>
-                </div>
-               
+          <div className="md:w-1/2 max-w-[32rem]">
+            <div className="rounded-lg overflow-hidden aspect-[4/3]">
+              <img src={`${base_url}/image/${produk.gambar}`} alt="Main product image" className="h-full w-full object-cover" />
+            </div>
+          </div>
+
+          <div className="md:w-1/2">
+            <h1 className="text-2xl md:text-3xl font-semibold mb-1">{produk.name}</h1>
+            <p className="text-gray-500 mb-4">{produk.material}</p>
+            <p className="text-2xl font-bold mb-6">$00.00</p>
+
+            <div className="">
+              <button className="flex justify-between items-center w-full">
+                <span className="font-semibold">Product Details</span>
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
             </div>
 
-           
-            <div className="md:w-1/2">
-                <h1 className="text-3xl font-semibold mb-2">{produk.name}</h1>
-                <p className="text-gray-500 mb-4">{produk.material}</p>
-                <p className="text-2xl font-bold mb-6">$00.00</p>
 
-                <p className="text-gray-600 mb-4">
-                   {produk.deskripsi}
-                </p>
-
-                <div className="mb-6">
-                    <h3 className="font-semibold mb-2">Choose Color</h3>
-                    <div className="flex gap-4">
-                    <button 
-                        className={`w-8 h-8 rounded-full border-2`} 
-                        style={{ backgroundColor: produk.color }}
-                    />
-              
-                    <button 
-                        className={`w-8 h-8 rounded-full border-2 opacity-75`} 
-                        style={{ backgroundColor: produk.color }}
-                    />
-                  
-                    <button 
-                        className={`w-8 h-8 rounded-full border-2 opacity-50`} 
-                        style={{ backgroundColor: produk.color }}
-                    />
-                    </div>
+          </div>
+  
+          <div className="fixed md:hidden bottom-0 left-0 right-0 bg-white p-4 flex flex-col justify-between py-6 shadow">
+            <div className="mb-4">
+                <h3 className="font-semibold mb-2">Choose Color</h3>
+                <div className="flex gap-3">
+                  <button
+                    className={`w-8 h-8 rounded-full border-2`}
+                    style={{ backgroundColor: produk.color }}
+                  />
+                  <button
+                    className={`w-8 h-8 rounded-full border-2 opacity-75`}
+                    style={{ backgroundColor: produk.color }}
+                  />
+                  <button
+                    className={`w-8 h-8 rounded-full border-2 opacity-50`}
+                    style={{ backgroundColor: produk.color }}
+                  />
                 </div>
-
-               
-
-                <button className="bg-green-500 text-white px-8 py-3 rounded-md hover:bg-green-600 transition-colors">
-                    Order Now
-                </button>
-                <div className="mt-8 space-y-4">
-                    <div className="border-t pt-4">
-                        <button className="flex justify-between items-center w-full">
-                            <span className="font-semibold">Product Details</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                            </svg>
-                        </button>
-                    </div>
-                    <div className="border-t pt-4">
-                        <button className="flex justify-between items-center w-full">
-                            <span className="font-semibold">Dimensions</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-
-                
-            </div>
+              </div>
+            <a href="" className="block bg-arifin-400 text-arifin-100 font-semibold w-full py-2 text-center rounded-md hover:bg-arifin-500 transition-colors">Order Now</a>
+          </div>
         </div>
 
-         {/* produk terkait */}
-         <h1 className="text-3xl mt-24 font-raleway">Related Products</h1>
-         <div className="mt-10">        
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                {related.length > 0 ? (
-                related.map((product, index) => (
-                   <a href={`/detail/${product.id}`}>
-                     <div
-                    key={index}
-                    className="bg-white rounded-lg shadow-md overflow-hidden hover:scale-105 transition-transform duration-300"
-                    >
-                    {/* Gambar Produk */}
+        
+        <p className="text-gray-600 my-10">
+          {produk.deskripsi}
+        </p>
+
+        <button className="hidden md:block w-[20%] bg-arifin-400 text-arifin-100 font-semibold py-4 text-center rounded-md hover:bg-arifin-500 transition-colors">
+          Order Now
+        </button>
+
+        {/* produk terkait */}
+        <h1 className="text-xl md:text-2xl mt-24 font-raleway">Related Products</h1>
+        <div className="mt-10">
+          <div className="w-full grid grid-cols-2 grid-rows-3 md:grid-cols-3 lg:grid-cols-4 md:grid-rows-2 gap-4 lg:gap-6">
+            {related.length > 0 ? (
+              related.map((product, index) => (
+                <a href={`/detail/${product.id}`} key={index}>
+                  <div className="bg-white rounded-lg shadow-md overflow-hidden hover:scale-105 transition-transform duration-300">
+                    {/* Product Image */}
                     <img
-                        src={`${base_url}image/${product.gambar}`} // Default placeholder jika gambar tidak ada
-                        alt={product.name}
-                        className="w-full h-48 object-cover"
+                      src={`${base_url}image/${product.image}`} // Default placeholder if image not available
+                      alt={product.name}
+                      className="w-full h-48 object-cover"
                     />
                     <div className="p-4">
-                       
-                        <p className="text-sm text-gray-600">
-                        <span className="font-medium">Color:</span> {product.color || "Tidak tersedia"}
-                        </p>
-                        {/* Motif */}
-                        <p className="text-sm text-gray-600">
-                        <span className="font-medium">Motif:</span> {product.motif || "Tidak tersedia"}
-                        </p>
+                      <p className="text-sm text-gray-600">
+                        <span className="font-medium">Color:</span> {product.color || "Not available"}
+                      </p>
+                      {/* Pattern */}
+                      <p className="text-sm text-gray-600">
+                        <span className="font-medium">Pattern:</span> {product.pattern || "Not available"}
+                      </p>
                     </div>
-                    </div>
-                   </a>
-                ))
-                ) : (
-                <p className="text-center text-gray-500 col-span-full">
-                    Tidak ada produk yang ditemukan.
-                </p>
-                )}
-            </div>
-            </div>
-    </div>
-
-    <Footer/>
-
+                  </div>
+                </a>
+              ))
+            ) : (
+              <p className="text-center text-gray-500 col-span-full">
+                Tidak ada produk yang ditemukan.
+              </p>
+            )}
+          </div>
+        </div>
+      </div>
+      <Footer />
     </>
   );
 }

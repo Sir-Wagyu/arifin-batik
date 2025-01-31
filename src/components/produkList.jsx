@@ -6,7 +6,8 @@ function ProdukList() {
 
     const [products, setProducts] = useState([]);
 
-    let base_url = "http://localhost:8888/arifinbatikbackend/";
+    // let base_url = "http://localhost:8888/arifinbatikbackend/";
+    let base_url = "http://localhost/arifinbatikbackend/";
 
     const getProduct = async () => {
         try{
@@ -23,41 +24,35 @@ function ProdukList() {
     },[])
 
     return (
-        <>
-           <div className="p-6">        
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <>      
+            <div className="w-full grid grid-cols-2 grid-rows-3 md:grid-cols-3 lg:grid-cols-4 md:grid-rows-2 gap-4 lg:gap-6  font-raleway text-arifin-500">
                 {products.length > 0 ? (
                 products.map((product, index) => (
-                   <a href={`/detail/${product.id}`}>
-                     <div
-                    key={index}
-                    className="bg-white rounded-lg shadow-md overflow-hidden hover:scale-105 transition-transform duration-300"
-                    >
-                    {/* Gambar Produk */}
-                    <img
-                        src={`${base_url}image/${product.gambar}`} // Default placeholder jika gambar tidak ada
-                        alt={product.name}
-                        className="w-full h-48 object-cover"
-                    />
-                    <div className="p-4">
-                       
-                        <p className="text-sm text-gray-600">
-                        <span className="font-medium">Color:</span> {product.color || "Tidak tersedia"}
-                        </p>
-                        {/* Motif */}
-                        <p className="text-sm text-gray-600">
-                        <span className="font-medium">Motif:</span> {product.motif || "Tidak tersedia"}
-                        </p>
+                <a key={index} href={`/detail/${product.id}`} className="group">
+                    <div className=" bg-arifin-100 rounded-lg shadow-md transition-transform duration-300">
+                        <div className="aspect-[4/3] overflow-hidden">
+                            <img
+                                src={`${base_url}image/${product.gambar}`} // Default placeholder if image is not available
+                                alt={product.name}
+                                className="w-full h-full object-cover group-hover:scale-110 transition-all transform duration-300"
+                                />
+                        </div>
+                        <div className="p-4 text-sm md:text-base">
+                            <p className=" text-gray-600">
+                                <span className="font-semibold">Pattern:</span> {product.motif || "Not available"}
+                            </p>
+                            <p className=" text-gray-600">
+                                <span className="font-semibold">Color:</span> {product.color || "Not available"}
+                            </p>
+                        </div>
                     </div>
-                    </div>
-                   </a>
+                </a>
                 ))
                 ) : (
                 <p className="text-center text-gray-500 col-span-full">
-                    Tidak ada produk yang ditemukan.
+                    No products found.
                 </p>
                 )}
-            </div>
             </div>
         </>
     );

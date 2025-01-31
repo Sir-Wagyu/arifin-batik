@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebook, faTwitter, faInstagram } from "@fortawesome/free-brands-svg-icons";
-import Collection from './collection';
+import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
+
 
 
 const footer = () => {
@@ -20,7 +20,7 @@ const footer = () => {
       {/* Brand Section */}
       <div className="lg:w-1/4">
         <div className="flex items-center mb-3 flex-row gap-2">
-          <img src="./logo.png" alt="" className="w-14 h-14"/>
+          <img src="../logo.png" alt="" className="w-14 h-14"/>
           <h1 className="text-2xl mt-3 font-lora text-white mb-3 font-alice">ArifinBatik</h1>
         </div>
         <p className="text-sm">

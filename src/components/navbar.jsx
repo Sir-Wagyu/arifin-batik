@@ -26,27 +26,27 @@ function Navbar() {
 
   return (
     <>
-      <nav className={`fixed w-full z-50 top-0 left-0 right-0 justify-between items-center flex px-6 md:px-12 lg:px-14 xl:px-28 py-3 transition-all duration-300 ${isScrolled ? "bg-arifin-200 shadow-md" : "bg-transparent"} ${isOpen ? "bg-arifin-200 shadow-md" : ""}`}>
+      <nav className={`fixed w-full z-50 top-0 left-0 right-0 justify-between items-center flex px-6 md:px-12 lg:px-14 xl:px-28 py-3 transition-all duration-300 ${isScrolled ? "bg-arifin-100 shadow-md" : "bg-transparent"} ${isOpen ? "bg-arifin-100 shadow-md" : ""}`}>
         <button className={`text-2xl md:hidden transition-colors duration-300 ${isScrolled ? "text-arifin-500" : "text-arifin-200"}`} onClick={handleToggle}>
           <FontAwesomeIcon icon={faBars} />
         </button>
         <Link to="/">
-          <img src={`${isScrolled ? "./logo.png" : "./logo 2.png"}`} alt="logo-arifin" className="w-11 lg:w-12  transition-all duration-300" />
+          <img src={`${isScrolled ? "../logo.png" : "../logo 2.png"}`} alt="logo-arifin" className="w-11 lg:w-12  transition-all duration-300" />
         </Link>
 
         <div className={`hidden md:flex gap-8 font-raleway font-medium md:text-base  ${isScrolled ? "text-arifin-500" : "text-arifin-200"}`}>
           <a href="/" className="transition-colors duration-300 hover:text-arifin-400">
             Home
           </a>
-          <a href="#about" className="transition-colors duration-300 hover:text-arifin-400">
-            About
-          </a>
-          <a href="#collection" className="transition-colors duration-300 hover:text-arifin-400">
-            Collection
-          </a>
           <Link to="/product" className="transition-colors duration-300 hover:text-arifin-400">
             Product
           </Link>
+          <a href="#collection" className="transition-colors duration-300 hover:text-arifin-400">
+            Collection
+          </a>
+          <a href="#about" className="transition-colors duration-300 hover:text-arifin-400">
+            About
+          </a>
           <Link to="/contact" className="transition-colors duration-300 hover:text-arifin-400">
             Contact
           </Link>
