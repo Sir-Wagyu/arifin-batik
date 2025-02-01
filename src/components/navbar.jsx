@@ -72,9 +72,9 @@ function Navbar() {
           </div>
         </div>
 
-        <button className={`text-xl  transition-colors duration-300 ${isScrolled ? "text-arifin-500" : "text-arifin-200"}`} >
+        <Link to="/product" className={`text-xl  transition-colors duration-300 ${isScrolled ? "text-arifin-500" : "text-arifin-200"}`} >
           <FontAwesomeIcon icon={faMagnifyingGlass} />
-        </button>
+        </Link>
       </nav>
       {isOpen && <div className="fixed inset-0 bg-black opacity-40 z-30 transition-all duration-300" onClick={handleToggle}></div>}
     </>

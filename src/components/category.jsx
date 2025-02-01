@@ -18,7 +18,7 @@ function Category() {
                 <img className="rounded-lg w-full h-full object-cover" src="./cate2.png"/>
             </div>
             <div className=" h-56 md:h-72 xl:h-96 aspect-square snap-center rounded-lg relative">
-                <img className="rounded-lg w-full h-full object-cover" src="./cate1.png"/>
+                <img className="rounded-lg w-full h-full object-cover" src="./cate3.png"/>
             </div>
           </div>
         </div>

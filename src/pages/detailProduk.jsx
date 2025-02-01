@@ -15,8 +15,8 @@ function DetailProduk() {
   const [related, setRelated] = useState([]);
 
 
-  // let base_url = "http://localhost:8888/arifinbatikbackend/";
-  let base_url = "http://localhost/arifinbatikbackend/";
+  let base_url = "http://localhost:8888/arifinbatikbackend/";
+  //let base_url = "http://localhost/arifinbatikbackend/";
 
   useEffect(()=>{
     const getDetail = async () => {
@@ -98,7 +98,7 @@ function DetailProduk() {
                   />
                 </div>
               </div>
-            <a href="" className="block bg-arifin-400 text-arifin-100 font-semibold w-full py-2 text-center rounded-md hover:bg-arifin-500 transition-colors">Order Now</a>
+            <a href="https://wa.me/62817818147?text=I%20am%20interested%20in%20your%20stamped%20batik%20products.%20Could%20you%20please%20provide%20more%20details%20about%20pricing%20and%20availability?" target="_blank" className="block bg-arifin-400 text-arifin-100 font-semibold w-full py-2 text-center rounded-md hover:bg-arifin-500 transition-colors">Order Now</a>
           </div>
         </div>
 
@@ -107,9 +107,9 @@ function DetailProduk() {
           {produk.deskripsi}
         </p>
 
-        <button className="hidden md:block w-[20%] bg-arifin-400 text-arifin-100 font-semibold py-4 text-center rounded-md hover:bg-arifin-500 transition-colors">
+        <a href="https://wa.me/62817818147?text=I%20am%20interested%20in%20your%20stamped%20batik%20products.%20Could%20you%20please%20provide%20more%20details%20about%20pricing%20and%20availability?" target="_blank" className="hidden md:block w-[20%] bg-arifin-400 text-arifin-100 font-semibold py-4 text-center rounded-md hover:bg-arifin-500 transition-colors">
           Order Now
-        </button>
+        </a>
 
         {/* produk terkait */}
         <h1 className="text-xl md:text-2xl mt-24 font-raleway">Related Products</h1>
@@ -121,7 +121,7 @@ function DetailProduk() {
                   <div className="bg-white rounded-lg shadow-md overflow-hidden hover:scale-105 transition-transform duration-300">
                     {/* Product Image */}
                     <img
-                      src={`${base_url}image/${product.image}`} // Default placeholder if image not available
+                      src={`${base_url}image/${product.gambar}`} // Default placeholder if image not available
                       alt={product.name}
                       className="w-full h-48 object-cover"
                     />

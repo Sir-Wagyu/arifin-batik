@@ -1,8 +1,16 @@
 import "../App.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronCircleDown } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
 
-function HeroProduk() {
+function HeroProduk({ onSearch }) {
+
+  const [searchQuery, setSearchQuery] = useState("");
+
+  // Fungsi untuk menangani perubahan input pencarian
+  const handleSearchChange = (event) => {
+    setSearchQuery(event.target.value);
+    onSearch(event.target.value);
+  };
+
   return (
     <>
       <div className="w-full h-[60vh] flex items-center justify-center relative">
@@ -14,6 +22,8 @@ function HeroProduk() {
                 <input
                     type="text"
                     name="search"
+                    value={searchQuery} // Mengikat state dengan input
+                    onChange={handleSearchChange} // Menangani perubahan input
                     placeholder="Search your product..."
                     className="w-full rounded-3xl max-w-md px-5 py-3 text-md bg-arifin-100 text-gray-700 placeholder-gray-400 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
                 />

@@ -23,10 +23,10 @@ function Collection() {
                   <img className="w-full h-full object-cover" src="./collection4.png"/>
               </div>
               <div className="hidden lg:block aspect-square rounded-lg">
-                  <img className="w-full h-full object-cover" src="./collection4.png"/>
+                  <img className="w-full h-full object-cover" src="./collection5.png"/>
               </div>
               <div className="hidden lg:block aspect-square rounded-lg">
-                  <img className="w-full h-full object-cover" src="./collection4.png"/>
+                  <img className="w-full h-full object-cover" src="./collection6.png"/>
               </div>
           </div>
 
