@@ -10,9 +10,9 @@ function Value() {
             </div>
             <div className="grid lg:grid-cols-3 gap-16 lg:gap-10 mt-16 text-arifin-500">
                 <div className="text-center">
-                    <div className="flex justify-center mb-4 lg:mb-6">
+                    <div className="flex justify-center mb-4 lg:mb-6 group">
                         <div className="mb-2 w-24 h-24 md:w-28 md:h-28 xl:w-32 xl:h-32 flex items-center justify-center bg-arifin-200 rounded-full">
-                            <img src="./icon2.png" alt="Batik Custom" className="mx-auto w-full h-full object-contain"/>
+                            <img src="./icon2.png" alt="Batik Custom" className="mx-auto w-full h-full object-contain group-hover:scale-110 transition-all duration-450"/>
                         </div>
                     </div>
                     <h2 className="text-xl font-semibold  mb-3">
@@ -24,9 +24,9 @@ function Value() {
                 </div>
                 
                 <div className="text-center">
-                    <div className="flex justify-center mb-4 lg:mb-6">
+                    <div className="flex justify-center mb-4 lg:mb-6 group">
                         <div className="mb-2 w-24 h-24 md:w-28 md:h-28 xl:w-32 xl:h-32 flex items-center justify-center bg-arifin-200 rounded-full">
-                            <img src="./icon1.png" alt="Variasi Produk" className="mx-auto w-full h-[90%] object-contain"/>
+                            <img src="./icon1.png" alt="Variasi Produk" className="mx-auto w-full h-[90%] object-contain group-hover:scale-110 transition-all duration-450"/>
                         </div>
                     </div>
                     <h2 className="text-xl font-semibold mb-3">
@@ -38,9 +38,9 @@ function Value() {
                 </div>
             
                 <div className="text-center">
-                    <div className="flex justify-center mb-4 lg:mb-6">
+                    <div className="flex justify-center mb-4 lg:mb-6 group">
                         <div className="mb-2 w-24 h-24 md:w-28 md:h-28 xl:w-32 xl:h-32 flex items-center justify-center bg-arifin-200 rounded-full">
-                            <img src="./icon3.png"  alt="Harga Terbaik" className="mx-auto w-full h-[90%] object-contain"/>
+                            <img src="./icon3.png"  alt="Harga Terbaik" className="mx-auto w-full h-[90%] object-contain group-hover:scale-110 transition-all duration-450"/>
                         </div>
                     </div>
                     <h2 className="text-xl font-semibold  mb-3">

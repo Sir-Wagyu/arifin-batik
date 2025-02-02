@@ -10,23 +10,23 @@ function Collection() {
         </div>
 
         <div className="mx-auto lg:max-w-[88%] grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-7 mt-10 md:mt-12 lg:mt-14">
-              <div className="aspect-square rounded-lg ">
-                  <img className="w-full h-full object-cover" src="./collection1.png"/>
+              <div className="aspect-square rounded-lg overflow-hidden group">
+                  <img className="w-full h-full object-cover group-hover:scale-110 transition-all duration-400" src="./collection1.png"/>
               </div>
-              <div className="aspect-square rounded-lg">
-                  <img className="w-full h-full object-cover" src="./collection2.png"/>
+              <div className="aspect-square rounded-lg overflow-hidden group">
+                  <img className="w-full h-full object-cover group-hover:scale-110 transition-all duration-400" src="./collection2.png"/>
               </div>
-              <div className="aspect-square rounded-lg">
-                  <img className="w-full h-full object-cover" src="./collection3.png"/>
+              <div className="aspect-square rounded-lg overflow-hidden group">
+                  <img className="w-full h-full object-cover group-hover:scale-110 transition-all duration-400" src="./collection3.png"/>
               </div>
-              <div className="aspect-square rounded-lg">
-                  <img className="w-full h-full object-cover" src="./collection4.png"/>
+              <div className="aspect-square rounded-lg overflow-hidden group">
+                  <img className="w-full h-full object-cover group-hover:scale-110 transition-all duration-400" src="./collection4.png"/>
               </div>
-              <div className="hidden lg:block aspect-square rounded-lg">
-                  <img className="w-full h-full object-cover" src="./collection5.png"/>
+              <div className="hidden lg:block aspect-square rounded-lg overflow-hidden group">
+                  <img className="w-full h-full object-cover group-hover:scale-110 transition-all duration-400" src="./collection5.png"/>
               </div>
-              <div className="hidden lg:block aspect-square rounded-lg">
-                  <img className="w-full h-full object-cover" src="./collection6.png"/>
+              <div className="hidden lg:block aspect-square rounded-lg overflow-hidden group">
+                  <img className="w-full h-full object-cover group-hover:scale-110 transition-all duration-400" src="./collection6.png"/>
               </div>
           </div>
 

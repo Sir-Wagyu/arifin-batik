@@ -30,26 +30,23 @@ function Navbar() {
         <button className={`text-2xl md:hidden transition-colors duration-300 ${isScrolled ? "text-arifin-500" : "text-arifin-200"}`} onClick={handleToggle}>
           <FontAwesomeIcon icon={faBars} />
         </button>
-        <Link to="/">
+        <a href="/">
           <img src={`${isScrolled ? "../logo.png" : "../logo 2.png"}`} alt="logo-arifin" className="w-11 lg:w-12  transition-all duration-300" />
-        </Link>
+        </a>
 
         <div className={`hidden md:flex gap-8 font-raleway font-medium md:text-base  ${isScrolled ? "text-arifin-500" : "text-arifin-200"}`}>
           <a href="/" className="transition-colors duration-300 hover:text-arifin-400">
             Home
           </a>
-          <Link to="/product" className="transition-colors duration-300 hover:text-arifin-400">
+          <a href="/product" className="transition-colors duration-300 hover:text-arifin-400">
             Product
-          </Link>
-          <a href="#collection" className="transition-colors duration-300 hover:text-arifin-400">
-            Collection
           </a>
-          <a href="#about" className="transition-colors duration-300 hover:text-arifin-400">
+          <a href="/#about" className="transition-colors duration-300 hover:text-arifin-400">
             About
           </a>
-          <Link to="/contact" className="transition-colors duration-300 hover:text-arifin-400">
+          <a href="/contact" className="transition-colors duration-300 hover:text-arifin-400">
             Contact
-          </Link>
+          </a>
         </div>
 
         <div className={`fixed top-0 left-0 bottom-0 w-[65%] bg-arifin-100 z-40 transition-transform duration-300 ${isOpen ? "translate-x-0" : "-translate-x-full"}`}>
@@ -57,15 +54,12 @@ function Navbar() {
             <a href="/" className="transition-colors duration-300 hover:text-arifin-400 w-full px-6">
               Home
             </a>
-            <a href="#about" className="transition-colors duration-300 hover:text-arifin-400 w-full px-6" >
+            <a href="/product" className="transition-colors duration-300 hover:text-arifin-400 w-full px-6">
+            Product
+            </a>
+            <a href="/#about" className="transition-colors duration-300 hover:text-arifin-400 w-full px-6" >
               About
             </a>
-            <a href="#collection" className="transition-colors duration-300 hover:text-arifin-400 w-full px-6">
-            Collection
-            </a>
-            <Link to="/product" className="transition-colors duration-300 hover:text-arifin-400 w-full px-6">
-            Product
-            </Link>
             <Link to="/contact" className="transition-colors duration-300 hover:text-arifin-400 w-full px-6">
               Contact
             </Link>

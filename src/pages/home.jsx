@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "../App.css";
 import Hero from "../components/hero.jsx";
 import Navbar from "../components/navbar.jsx";
@@ -46,9 +46,9 @@ function Home() {
       <Navbar />
       <Hero />
       <Category />
-      <Value />
-      <About />
       <Collection />
+      <About />
+      <Value />
       <Iklan />
       <Galery />
       <Footer />

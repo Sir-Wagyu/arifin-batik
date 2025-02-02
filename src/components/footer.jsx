@@ -7,8 +7,9 @@ const footer = () => {
   return (
     <>
    <div className="w-full h-64 lg:h-96 mb-2 mt-10">
+
   <iframe
-    src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d693.2689179117708!2d115.19526772376743!3d-8.698212599217173!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zOMKwNDEnNTMuNiJTIDExNcKwMTEnNDQuMyJF!5e1!3m2!1sid!2sid!4v1738044207228!5m2!1sid!2sid"
+    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d816.15040952221!2d115.19508629405983!3d-8.698144908541902!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zOMKwNDEnNTQuMCJTIDExNcKwMTEnNDQuNCJF!5e0!3m2!1sid!2sid!4v1738487784397!5m2!1sid!2sid"
     loading="lazy"
     className="w-full h-full"
   ></iframe>

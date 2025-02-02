@@ -60,9 +60,6 @@ function FilterProduk({searchQuery}) {
                     </button>
                 </div>
 
-                {/* Sort */}
-                
-
                 {/* Filter */}
                 <div id="filterDiv" className={`fixed bottom-0 left-0 right-0 h-[80%] bg-arifin-100 z-40 transition-transform duration-300 ${isFilterOpen ? "translate-y-0" : "translate-y-full"}`} >
                     <div className="h-full overflow-y-auto">
@@ -90,7 +87,7 @@ function FilterProduk({searchQuery}) {
                                             onChange={() => handleCategoryChange(categoryValue)} // Mengubah nilai state saat kategori dipilih
                                             className="hidden peer" // Menggunakan peer untuk mengontrol elemen terhubung
                                             />
-                                            <div className="bg-arifin-200 text-arifin-500 peer-checked:bg-arifin-400 peer-checked:text-white px-5 py-2 rounded-lg transition-all">
+                                            <div className={`  px-5 py-2 rounded-lg transition-all duration-300 cursor-pointer ${selectedCategories.includes(categoryValue) ? 'bg-arifin-400 text-arifin-100 ' : 'bg-arifin-100 text-arifin-500'}`}>
                                             {item}
                                             </div>
                                         </label>
@@ -114,14 +111,14 @@ function FilterProduk({searchQuery}) {
                                                     className="hidden peer"
                                                     onClick={handleFilterToggle}
                                                 />
-                                                <div className="bg-arifin-200 text-arifin-500 peer-checked:bg-arifin-400 peer-checked:text-white px-5 py-2 rounded-lg transition-all">{item}</div>
+                                                <div className={` px-5 py-2 rounded-lg transition-all duration-300 cursor-pointer ${selectedMotif.includes(item) ? 'bg-arifin-400 text-arifin-100' : 'bg-arifin-100 text-arifin-500'}`}>{item}</div>
                                             </label>
                                         </div>
                                     ))}
                                 </div>
                             </div>
 
-                            <div className="mb-8">
+                            <div className="mt-8 mb-10">
                             <h2 className="text-lg font-semibold mb-4">Colors</h2>
                             <div className="grid grid-cols-4 gap-2">
                                 {[
@@ -136,17 +133,17 @@ function FilterProduk({searchQuery}) {
                                     { colorClass: "bg-black", label: "Black" }
                                 ].map((item, index) => (
                                     <div key={index} className="mb-2">
-                                        <label className={`relative ${selectedColors.includes(item.label) ? 'border-4 border-blue-500' : ''}`}>
+                                        <label className={`relative ${selectedColors.includes(item.label) ? '' : ''}`}>
                                             <input
                                                 type="radio"
                                                 name="colors"
                                                 checked={selectedColors.includes(item.label)}
                                                 onChange={() => handleColorChange(item.label)}
-                                                onClick={handleFilterToggle}
+                                                onClick={handleFilterToggle}    
                                                 className="hidden peer"
                                             />
                                             <div
-                                                className={`w-7 aspect-square rounded-full ${item.colorClass} transition-all peer-checked:outline-blue-400 peer-checked:outline peer-checked:outline-offset-4`}
+                                                className={`w-7 aspect-square rounded-full ${item.colorClass} transition-all  ${selectedColors.includes(item.label) ? 'outline outline-arifin-400 outline-offset-2' : ''}`}
                                             ></div>
                                         
                                         </label>
@@ -178,38 +175,42 @@ function FilterProduk({searchQuery}) {
                     const categoryValue = index + 1; // Nilai kategori: Rainbow = 1, Plain = 2, Smoke = 3
                     return (
                         <div key={index} className="mb-2">
-                            <label className={`flex items-center ${selectedCategories.includes(categoryValue) ? 'bg-blue-200 p-2 rounded' : ''}`}>
+                            <label className={`flex items-center hover:font-semibold hover:text-arifin-400 ${selectedCategories.includes(categoryValue) ? 'font-semibold ' : ''}`}>
                                 <input
                                     type="radio"
                                     name="category"
                                     value={categoryValue}
-                                    checked={selectedCategories === categoryValue} // Cek apakah kategori terpilih
+                                    checked={selectedCategories.includes(categoryValue)} // Cek apakah kategori terpilih
                                     onChange={() => handleCategoryChange(categoryValue)} // Mengubah kategori terpilih
-                                    className="accent-arifin-400"
+                                    className="accent-arifin-400 hidden peer"
                                 />
-                                <span className="ml-2 text-gray-600">{item}</span>
+                                <span className={`  ${selectedCategories.includes(categoryValue) ? 'text-arifin-400 ' : ''}`}>{item}</span>
                             </label>
                         </div>
                     );
                 })}
             </div>
 
+            {/* yang ingin saya edit */}
                 <div className="mb-8">
                     <h2 className="text-lg font-semibold mb-4">Motif</h2>
-                    {["Lung-lungan", "Flower", "Animal", "Abstrak"].map((item, index) => (
-                        <div key={index} className="mb-2">
-                            <label className={`flex items-center ${selectedMotif.includes(item) ? 'bg-blue-200 p-2 rounded' : ''}`}>
-                                <input  
-                                    type="radio"
-                                    name="motif"
-                                    checked={selectedMotif.includes(item)}
-                                    onChange={() => handleMotifChange(item)}
-                                    className="accent-arifin-400"
-                                />
-                                <span className="ml-2 text-gray-600">{item}</span>
-                            </label>
-                        </div>
-                    ))}
+                    {["Lung-lungan", "Flower", "Animal", "Abstrak"].map((item, index) => {
+
+                        return (
+                            <div key={index} className="mb-2 group">
+                                <label className={`w-full flex items-center  ${selectedMotif.includes(item) ? '' : ''}`}>
+                                    <input  
+                                        type="radio"
+                                        name="motif"
+                                        checked={selectedMotif === item}
+                                        onChange={() => handleMotifChange(item)}
+                                        className="accent-arifin-400 hidden peer"
+                                    />
+                                    <span className={`w-full  ${selectedMotif.includes(item) ? 'text-arifin-400 font-semibold' : ''}`}>{item}</span>
+                                </label>
+                            </div>
+                        )
+                    })}
                 </div>
 
                 <div className="mb-8">
@@ -227,16 +228,17 @@ function FilterProduk({searchQuery}) {
                             { colorClass: "bg-black", label: "Black" }
                         ].map((item, index) => (
                             <div key={index} className="mb-2">
-                                <label className={`relative ${selectedColors.includes(item.colorClass) ? 'border-4 border-blue-500' : ''}`}>
+                                <label className={` ${selectedColors.includes(item.label) ? '' : ''}`}>
                                     <input
                                         type="radio"
                                         name="colors"
-                                        checked={selectedColors.includes(item.label)}
+                                        value={item.label}
+                                        checked={selectedColors === item.label}
                                         onChange={() => handleColorChange(item.label)}
                                         className="hidden peer"
                                     />
                                     <div
-                                        className={`w-7 aspect-square rounded-full ${item.colorClass} transition-all peer-checked:outline-blue-400 peer-checked:outline peer-checked:outline-offset-4`}
+                                        className={`w-7 aspect-square rounded-full  ${item.colorClass} transition-all ${selectedColors.includes(item.label) ? 'outline outline-arifin-400 outline-offset-2' : ''}`}
                                     ></div>
                                    
                                 </label>

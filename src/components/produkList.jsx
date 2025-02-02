@@ -11,8 +11,8 @@ function ProdukList({ filters, searchQuery}) {
         window.scrollTo({ top: 0, behavior: "smooth" });
     };    
     
-    let base_url = "http://localhost:8888/arifinbatikbackend/";
-     //let base_url = "http://localhost/arifinbatikbackend/";
+    // let base_url = "http://localhost:8888/arifinbatikbackend/";
+     let base_url = "http://localhost/arifinbatikbackend/";
 
 
     const getProduct = async (page) => {
