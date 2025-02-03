@@ -100,7 +100,7 @@ function FilterProduk({searchQuery}) {
                             <div className="mt-8">
                                 <h3 className="text-lg font-semibold mb-4">Motif</h3>
                                 <div className="flex flex-wrap gap-2">
-                                    {["Lung-lungan", "Flower", "Animal", "Abstrak"].map((item, index) => (
+                                    {["Plant", "Flower", "Animal", "Abstrak"].map((item, index) => (
                                         <div key={index} className="mb-2">
                                             <label className="flex items-center">
                                                 <input
@@ -194,7 +194,7 @@ function FilterProduk({searchQuery}) {
             {/* yang ingin saya edit */}
                 <div className="mb-8">
                     <h2 className="text-lg font-semibold mb-4">Motif</h2>
-                    {["Lung-lungan", "Flower", "Animal", "Abstrak"].map((item, index) => {
+                    {["Plant", "Flower", "Animal", "Abstrak"].map((item, index) => {
 
                         return (
                             <div key={index} className="mb-2 group">

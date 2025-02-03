@@ -13,6 +13,7 @@ function DetailProduk() {
   const {id} = useParams();
   const [produk, setProduk] = useState([]);
   const [related, setRelated] = useState([]);
+  const [detailsOpen, setDetailsOpen] = useState(false);
 
 
   let base_url = "https://api.arifinbatik.com/";
@@ -56,49 +57,74 @@ function DetailProduk() {
       </div>
 
       <div className="container mx-auto px-6 md:px-12 lg:px-14 xl:px-28 py-10 font-raleway">
-        <div className="flex flex-col md:flex-row gap-8">
+          <div className="flex flex-col md:flex-row gap-8">
+          {/* Image Section */}
           <div className="md:w-1/2 max-w-[32rem]">
-            <div className="rounded-lg overflow-hidden aspect-[4/3]">
-              <img src={`${base_url}/image/${produk.gambar}`} alt="Main product image" className="h-full w-full object-cover" />
+            <div className="rounded-lg overflow-hidden aspect-[4/3] shadow-lg hover:shadow-xl transition-shadow">
+              <img
+                src={`${base_url}/image/${produk.gambar}`}
+                alt="Main product image"
+                className="h-full w-full object-cover hover:scale-105 transition-transform duration-300"
+              />
             </div>
           </div>
 
+          {/* Product Details */}
           <div className="md:w-1/2">
-            <h1 className="text-2xl md:text-3xl font-semibold mb-1">{produk.name}</h1>
-            <p className="text-gray-500 mb-4">{produk.material}</p>
-            <p className="text-2xl font-bold mb-6">$00.00</p>
+            <h1 className="text-2xl md:text-3xl font-semibold mb-1 text-gray-800">
+              {produk.name}
+            </h1>
+            <p className="text-gray-500 mb-2">{produk.material}</p>
+            <p className="text-2xl font-bold text-arifin-500 mb-6">$00.00</p>
 
-            <div className="">
-              <button className="flex justify-between items-center w-full">
+            {/* Toggle Product Details */}
+            <div>
+              <button
+                className="flex justify-between items-center w-full  rounded-md transition"
+                onClick={() => setDetailsOpen(!detailsOpen)}
+              >
                 <span className="font-semibold">Product Details</span>
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className={`h-6 w-6 transform transition-transform ${
+                    detailsOpen ? "rotate-180" : ""
+                  }`}
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M19 9l-7 7-7-7"
+                  />
                 </svg>
               </button>
-            </div>
-
-
-          </div>
-  
-          <div className="fixed md:hidden bottom-0 left-0 right-0 bg-white p-4 flex flex-col justify-between py-6 shadow">
-            <div className="mb-4">
-                <h3 className="font-semibold mb-2">Choose Color</h3>
-                <div className="flex gap-3">
-                  <button
-                    className={`w-8 h-8 rounded-full border-2`}
-                    style={{ backgroundColor: produk.color }}
-                  />
-                  <button
-                    className={`w-8 h-8 rounded-full border-2 opacity-75`}
-                    style={{ backgroundColor: produk.color }}
-                  />
-                  <button
-                    className={`w-8 h-8 rounded-full border-2 opacity-50`}
-                    style={{ backgroundColor: produk.color }}
-                  />
+              {detailsOpen && (
+                <div className="mt-2 rounded-md">
+                  <p className="mb-3">Color: <span>{produk.color}</span></p>
+                  <p className="mb-3">Motif: <span>{produk.motif}</span></p>
+                  <p>Category: <span>
+                    {produk.category_id === 1 ? "Rainbow" :
+                    produk.category_id === 2 ? "Plain" :
+                    produk.category_id === 3 ? "Smoke" :
+                    "Unknown"}
+                  </span></p>
                 </div>
-              </div>
-            <a href="https://wa.me/62817818147?text=I%20am%20interested%20in%20your%20stamped%20batik%20products.%20Could%20you%20please%20provide%20more%20details%20about%20pricing%20and%20availability?" target="_blank" className="block bg-arifin-400 text-arifin-100 font-semibold w-full py-2 text-center rounded-md hover:bg-arifin-500 transition-colors">Order Now</a>
+              )}
+            </div>
+          </div>
+
+          {/* Order Now Button (Mobile Fixed) */}
+          <div className="fixed md:hidden bottom-0 left-0 right-0 bg-white p-4 z-10 shadow">
+            <a
+              href="https://wa.me/62817818147?text=I%20am%20interested%20in%20your%20stamped%20batik%20products.%20Could%20you%20please%20provide%20more%20details%20about%20pricing%20and%20availability?"
+              target="_blank"
+              className="block bg-arifin-400 text-arifin-100 font-semibold w-full py-3 text-center rounded-md hover:bg-arifin-600 transition-all duration-300 transform hover:scale-105"
+            >
+              Order Now
+            </a>
           </div>
         </div>
 
@@ -118,23 +144,23 @@ function DetailProduk() {
             {related.length > 0 ? (
               related.map((product, index) => (
                 <a href={`/detail/${product.id}`} key={index}>
-                  <div className="bg-white rounded-lg shadow-md overflow-hidden hover:scale-105 transition-transform duration-300">
-                    {/* Product Image */}
-                    <img
-                      src={`${base_url}image/${product.gambar}`} // Default placeholder if image not available
-                      alt={product.name}
-                      className="w-full h-48 object-cover"
-                    />
-                    <div className="p-4">
-                      <p className="text-sm text-gray-600">
-                        <span className="font-medium">Color:</span> {product.color || "Not available"}
-                      </p>
-                      {/* Pattern */}
-                      <p className="text-sm text-gray-600">
-                        <span className="font-medium">Pattern:</span> {product.pattern || "Not available"}
-                      </p>
-                    </div>
-                  </div>
+                  <div className="bg-arifin-100 rounded-lg shadow-md transition-transform duration-300">
+                                <div className="aspect-[4/3] overflow-hidden">
+                                    <img
+                                        src={`${base_url}image/${product.gambar}`}
+                                        alt={product.name}
+                                        className="w-full h-full object-cover group-hover:scale-110 transition-all transform duration-300"
+                                    />
+                                </div>
+                                <div className="p-4 text-sm md:text-base">
+                                    <p className="text-gray-600">
+                                        <span className="font-semibold">Pattern:</span> {product.motif || "Not available"}
+                                    </p>
+                                    <p className="text-gray-600">
+                                        <span className="font-semibold">Color:</span> {product.color || "Not available"}
+                                    </p>
+                                </div>
+                            </div>
                 </a>
               ))
             ) : (
