@@ -27,45 +27,45 @@ function Contact() {
           <div className="w-full mt-4 lg:w-[80%] mx-auto">
             <button className="group w-full justify-center border-b-2 border-warna-300 py-5 px-2 mt-4 transition-all text-left">
                   <div className="flex items-center justify-between hover:text-warna-300">
-                      <p className="font-medium md:text-lg w-[88%] group-focus:font-semibold group-focus:text-arifin-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                      <p className="font-medium md:text-lg w-[88%] group-focus:font-semibold group-focus:text-arifin-400">What types of batik do you sell?</p>
                       <FontAwesomeIcon icon={faChevronRight} className="group-focus:rotate-90 transition-all"/>
                   </div>
                   <div className="max-h-0 overflow-hidden transition-[max-height] duration-500 ease-in-out group-focus:max-h-40">
                   <p className="mt-2 py-3">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde fugiat ex culpa, fuga optio temporibus!
+                  We specialize in stamped batik (batik cap) and offer a wide range of patterns and colors. You can also request custom designs based on your preferences or specific categories to suit your needs.
                   </p>
               </div>
             </button>
             <button className="group w-full justify-center border-b-2 border-warna-300 py-5 px-2 mt-4 transition-all text-left">
                   <div className="flex items-center justify-between hover:text-warna-300">
-                      <p className="font-medium md:text-lg w-[88%] group-focus:font-semibold group-focus:text-arifin-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                      <p className="font-medium md:text-lg w-[88%] group-focus:font-semibold group-focus:text-arifin-400">Do you offer wholesale prices?</p>
                       <FontAwesomeIcon icon={faChevronRight} className="group-focus:rotate-90 transition-all"/>
                   </div>
                   <div className="max-h-0 overflow-hidden transition-[max-height] duration-500 ease-in-out group-focus:max-h-40">
                   <p className="mt-2 py-3">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde fugiat ex culpa, fuga optio temporibus!
+                  Yes, we provide competitive wholesale prices for bulk orders. Please contact us for special pricing and customization options.
                   </p>
               </div>
             </button>
             <button className="group w-full justify-center border-b-2 border-warna-300 py-5 px-2 mt-4 transition-all text-left">
                   <div className="flex items-center justify-between hover:text-warna-300">
-                      <p className="font-medium md:text-lg w-[88%] group-focus:font-semibold group-focus:text-arifin-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                      <p className="font-medium md:text-lg w-[88%] group-focus:font-semibold group-focus:text-arifin-400">Can I request custom batik designs?</p>
                       <FontAwesomeIcon icon={faChevronRight} className="group-focus:rotate-90 transition-all"/>
                   </div>
                   <div className="max-h-0 overflow-hidden transition-[max-height] duration-500 ease-in-out group-focus:max-h-40">
                   <p className="mt-2 py-3">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde fugiat ex culpa, fuga optio temporibus!
+                  Absolutely! We accept custom batik orders based on your desired patterns, colors, and fabric types. Reach out to us to discuss your requirements.
                   </p>
               </div>
             </button>
             <button className="group w-full justify-center border-b-2 border-warna-300 py-5 px-2 mt-4 transition-all text-left">
                   <div className="flex items-center justify-between hover:text-warna-300">
-                      <p className="font-medium md:text-lg w-[88%] group-focus:font-semibold group-focus:text-arifin-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                      <p className="font-medium md:text-lg w-[88%] group-focus:font-semibold group-focus:text-arifin-400">How can I place an order?</p>
                       <FontAwesomeIcon icon={faChevronRight} className="group-focus:rotate-90 transition-all"/>
                   </div>
                   <div className="max-h-0 overflow-hidden transition-[max-height] duration-500 ease-in-out group-focus:max-h-40">
                   <p className="mt-2 py-3">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde fugiat ex culpa, fuga optio temporibus!
+                  You can place an order through our website, WhatsApp, or email. Simply browse our catalog, choose your desired products, and contact us for payment and shipping details.
                   </p>
               </div>
             </button>
@@ -81,7 +81,7 @@ function Contact() {
           <div className="flex flex-wrap justify-center gap-5 mt-10">
             <a className="text-center group md:w-[25%]">
               <FontAwesomeIcon icon={faPhone} className="bg-arifin-400 text-arifin-100 py-5 px-5 md:py-7 md:px-7 rounded-full text-lg md:text-xl lg:text-2xl group-hover:bg-arifin-500 transition-all"/>
-              <p className="mt-2 font-medium ">123-456-7890</p>
+              <p className="mt-2 font-medium ">(+62) 817-818-147</p>
             </a>
             <a className="text-center md:w-[25%]">
               <FontAwesomeIcon icon={faEnvelope} className="bg-arifin-400 text-arifin-100 py-5 px-5 md:py-7 md:px-7 rounded-full text-lg md:text-xl lg:text-2xl"/>

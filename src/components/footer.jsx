@@ -28,11 +28,7 @@ const footer = () => {
          We create stamped batik that blends traditional techniques with modern aesthetics. Each piece showcases meticulous craftsmanship, creativity, and passion.
         </p>
         <div className="flex gap-4 mt-4">
-          <a href="#" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition">
-            <FontAwesomeIcon icon={faFacebook} size="lg" />
-          </a>
-         
-          <a href="#" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition">
+          <a href="https://www.instagram.com/arifin.batik/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition">
             <FontAwesomeIcon icon={faInstagram} size="lg" />
           </a>
         </div>

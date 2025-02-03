@@ -46,9 +46,9 @@ function Home() {
       <Navbar />
       <Hero />
       <Category />
-      <Collection />
-      <About />
       <Value />
+      <About />
+      <Collection />
       <Iklan />
       <Galery />
       <Footer />
