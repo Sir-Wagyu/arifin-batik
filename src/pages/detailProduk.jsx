@@ -15,7 +15,7 @@ function DetailProduk() {
   const [related, setRelated] = useState([]);
 
 
-  let base_url = "http://localhost:8888/arifinbatikbackend/";
+  let base_url = "https://api.arifinbatik.com/";
   //let base_url = "http://localhost/arifinbatikbackend/";
 
   useEffect(()=>{
